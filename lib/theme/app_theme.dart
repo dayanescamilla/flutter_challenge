@@ -5,7 +5,7 @@ class AppTheme {
     useMaterial3: true,
     colorSchemeSeed: Colors.green,
     appBarTheme: const AppBarTheme(
-      elevation: 10
+      elevation: 3
     )
   );
 }
