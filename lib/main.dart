@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenge/screens/screens.dart';
+import 'package:flutter_challenge/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Challenge',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
+      theme: AppTheme().getTheme(),
       home: const HomeScreen(),
     );
   }
