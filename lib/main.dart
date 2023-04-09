@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_challenge/screens/screens.dart';
 import 'package:flutter_challenge/theme/app_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,]
+  );
   runApp(const MyApp());
 }
 

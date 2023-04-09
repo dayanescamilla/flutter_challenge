@@ -86,11 +86,23 @@ class _NavigationState extends State<_Navigation> {
         controller: navModel.pageController,
         children: [
           Container(
-            color: Colors.red,
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.greenAccent
+                      ),
+                      onPressed: () async {
+                        setState(() {});
+                        dataTrivia = await APICall().getRandomTrivia();
+                    }, child: const SizedBox(
+                        width: double.infinity,
+                        child: Text('Dato trivia', textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontWeight: FontWeight.w200),)),),
+                  ),
                   if (dataTrivia != null)
                     Container(
                       alignment: Alignment.center,
@@ -121,29 +133,28 @@ class _NavigationState extends State<_Navigation> {
                         ),
                       ),
                     ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: FloatingActionButton(onPressed: () async {
-                          setState(() {});
-                          dataTrivia = await APICall().getRandomTrivia();
-                        },),
-                      )
-                    ],
-                  ),
                 ],
               ),
             ),
           ),
           Container(
-            color: Colors.green,
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.greenAccent
+                      ),
+                      onPressed: () async {
+                        setState(() {});
+                        dataDate = await APICall().getRandomDate();
+                      }, child: const SizedBox(
+                        width: double.infinity,
+                        child: Text('Dato fecha', textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontWeight: FontWeight.w200),)),),
+                  ),
                   if (dataDate != null)
                     Container(
                       alignment: Alignment.center,
@@ -174,29 +185,28 @@ class _NavigationState extends State<_Navigation> {
                         ),
                       ),
                     ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: FloatingActionButton(onPressed: () async {
-                          setState(() {});
-                          dataDate = await APICall().getRandomDate();
-                        },),
-                      )
-                    ],
-                  ),
                 ],
               ),
             ),
           ),
           Container(
-            color: Colors.blue,
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.greenAccent
+                      ),
+                      onPressed: () async {
+                        setState(() {});
+                        dataMath = await APICall().getRandomMath();
+                      }, child: const SizedBox(
+                        width: double.infinity,
+                        child: Text('Dato matematico', textAlign: TextAlign.center, style: TextStyle(fontSize: 30, fontWeight: FontWeight.w200),)),),
+                  ),
                   if (dataMath != null)
                     Container(
                       alignment: Alignment.center,
@@ -227,19 +237,6 @@ class _NavigationState extends State<_Navigation> {
                         ),
                       ),
                     ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: FloatingActionButton(onPressed: () async {
-                          setState(() {});
-                          dataMath = await APICall().getRandomMath();
-                        },),
-                      )
-                    ],
-                  ),
                 ],
               ),
             ),
